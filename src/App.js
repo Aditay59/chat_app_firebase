@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import SignIn from './components/SignIn';
+import Chat from './components/Chat';
+import Room from './components/Room';
+import Cookies from 'universal-cookie';
+import SignOut from './components/SignOut';
+import ChangeRoom from './components/ChangeRoom';
 
-function App() {
+const cookies = new Cookies();
+
+const App = ()=> {
+  const [isAuth,setisAuth] = useState(cookies.get("auth-token"));
+  const [room,setRoom] = useState(null);
+
+  if(!isAuth) {
+    return (
+      <>
+      <SignIn setisAuth={setisAuth}/>
+      </>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className='TopBtn'>
+    <SignOut setisAuth={setisAuth}/>
+    <ChangeRoom setRoom={setRoom}/>
     </div>
-  );
+   
+    {room ? (
+      <> <Chat room={room} /> </>
+      ):(
+      <> <Room setRoom={setRoom}/> </>
+      )}
+    </>
+  )
+
 }
 
 export default App;

@@ -1,38 +1,330 @@
-.App {
-  text-align: center;
+body{
+    background: linear-gradient(90deg,#ec008c,#fc6767);
+    font-family: helvetica;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Sign in page Css*/
+.Scontainer {
+    height:400px;
+    width:300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin:auto;
+    padding:10px;
+    margin-top:30px;
+    background: rgba(255, 255, 255, 0.30);
+    /* background: #fff; */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    transition: all 0.3s linear;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Scontainer:hover {
+    transform: scale(1.02);
+    border:2px solid blue;
+}
+  
+  .Scontainer:active {
+    transform: scale(0.99);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  ::selection{
+    background-color: pink;
   }
-  to {
-    transform: rotate(360deg);
+
+  /*Google button in sign in page css*/
+
+  .google-btn {
+    width: 188px;
+    height: 42px;
+    background-color: #4285f4;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+    display: flex;
+    transition: all 0.3s linear;
   }
+  .google-icon-contain {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+.btn{
+    float:right;
+    color: #fff;
+    margin-left:36px;
+    width:155px;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+    background-color: #4285f4;
+    border: none;
+    font-family: verdana;
+    cursor: pointer;
+  }
+
+  .google-btn:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+  .google-btn:active {
+    background:#1669f2;
+  }
+.head{
+    color: #fff;
 }
+
+/*Room page css*/
+
+.Rcontainer {
+    height:400px;
+    width:500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin:auto;
+    padding:10px;
+    margin-top:30px;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    transition: all 0.3s linear;
+}
+/*Room input css*/
+.input {
+    width:250px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    text-align: center;
+    font-weight: bold;
+}
+.input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,-13px -13px 100px #ffffff;
+}
+.input::placeholder{
+    color: #ec008c;
+}
+
+.Rcontainer:hover {
+    transform: scale(1.02);
+    border:2px solid blue;
+}
+  
+.Rcontainer:active {
+    transform: scale(0.99);
+  }
+
+  /*Room enter chat button css*/
+
+.Rbtn {
+    margin-left:20px;
+    border: none;
+    outline: none;
+    width:120px;
+    height:40px;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    background-color: rgb(230, 34, 77);
+    position: relative;
+    box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: #fff;
+    border: none;
+    overflow: hidden;
+    font-weight:bold;
+}
+
+.Rbtn:hover {
+    transform: scale(1.1);
+}
+.Rbtn:active {
+    transform: scale(1);
+    box-shadow: 0 0;
+}
+
+/*Sign Out button*/
+
+.SObtn {
+    margin:10px;
+    padding: 1.3em 3em;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.SObtn:hover {
+    background-color: #f00505;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+  
+.SObtn:active {
+    transform: translateY(-1px);
+}
+
+  /*Chat page css*/
+
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .room{
+    color:red;
+  }
+
+  .Ccontainer {
+    height:400px;
+    width:600px;
+    margin:auto;
+    padding:10px;
+    margin-top:30px;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    transition: all 0.3s linear;
+    position: relative;
+  }
+
+  /*container of form */
+  .sendMsg{
+    height:40px;
+    width:96%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin:auto;
+    bottom: 10px;
+  }
+   
+  /*Input box for sendign messages*/
+  .Minput {
+    width:30rem;
+    height:35px;
+    border: 2px solid #ccc;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+  }
+  .Minput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  /*Send button*/
+  .send{
+    width:90px;
+    height:40px;
+    margin-left:10px;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+    color: white;   
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+.send:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+.send:active {
+    transform: scale(1);
+}
+
+   /*Messages div*/
+
+   .messages {
+    height:250px;
+    padding: 10px;
+    overflow: auto;
+   }
+.mesg {
+    margin:10px;
+}
+
+.picture {
+    position: relative;
+}
+.name {
+    position: relative;
+    top:-5px;
+    font-size: 14px;
+    font-style: oblique;
+}
+.text {
+    position: relative;
+    top:-5px;
+    font-weight: bold;
+}
+
+/* Top Buttons*/
+
+.TopBtn {
+    display: flex;
+}
+
+.ChangeRm {
+    margin:10px;
+    padding: 1.3em 3em;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.ChangeRm:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  .changeRm:active {
+    transform: translateY(-1px);
+  }
