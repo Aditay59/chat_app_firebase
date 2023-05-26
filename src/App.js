@@ -24,7 +24,7 @@ const App = ()=> {
   return (
     <>
     <div className='TopBtn'>
-    <SignOut setisAuth={setisAuth}/>
+    <SignOut setisAuth={setisAuth} setRoom={setRoom}/>
     <ChangeRoom setRoom={setRoom}/>
     </div>
    
