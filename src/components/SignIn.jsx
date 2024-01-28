@@ -3,6 +3,7 @@ import {signInWithPopup} from 'firebase/auth';
 import {auth,provider} from '../Firebase/firebase-config';
 import Cookies from 'universal-cookie';
 import '../App.css';
+import gLogo from '../assets/g_logo.png';
 
 const cookies = new Cookies();
 
@@ -20,14 +21,14 @@ const SignIn = ({setisAuth})=> {
         }
        
     }
-
+//https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg
   return (
     <>
     <div className='Scontainer'>
         <div className='head'> <h1>Sign In with Google</h1> </div>
         <div className='google-btn'>
             <div className='google-icon-contain'>
-            <img className='google-icon' src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"  alt='logo'/>
+            <img className='google-icon' src={gLogo}  alt='logo'/>
             </div>
         <button onClick={clickHandler} className='btn'> Sign in with google </button>
         </div>
